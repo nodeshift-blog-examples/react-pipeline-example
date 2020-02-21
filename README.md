@@ -1,5 +1,24 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+This project is used as an example on how to deploy modern web applications using Openshift Pipelines.
+
+## Deploy to Kubernetes/Openshift
+
+If you want to deploy an already built version of the web app running on nginx to Openshift/Kubernetes, you can use the scripts located in the `k8s` folder
+
+Assuming you already have access to a Openshift/Kubernetes Cluster, you can run the following commands:
+
+```
+$ oc apply -f k8s/depoyment.yaml
+
+$ oc apply -f k8s/service.yaml
+
+$ oc apply -f k8s/route.yaml
+```
+
+The already built version is located on docker hub here: https://hub.docker.com/repository/docker/nodeshift/react-pipeline-example, which is what the deployment.yaml points to
+
+
 ## Available Scripts
 
 In the project directory, you can run:

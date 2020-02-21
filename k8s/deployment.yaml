@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: react-pipeline-example
+  name: react-pipeline-example
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: react-pipeline-example
+  template:
+    metadata:
+      labels:
+        app: react-pipeline-example
+    spec:
+      containers:
+        - image: nodeshift/react-pipeline-example:latest
+          imagePullPolicy: Always
+          name: react-pipeline-example
+          ports:
+            - containerPort: 8080
+              protocol: TCP
